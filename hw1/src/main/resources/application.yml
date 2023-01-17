@@ -24,3 +24,7 @@ management:
 logging:
   level:
     spring.*: info
+
+springdoc:
+  packagesToScan: org.parham.docker.homeworks.hw1.controller
+  pathsToMatch: /**
