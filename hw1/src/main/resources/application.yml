@@ -1,0 +1,26 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /parham
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus
+  endpoint:
+    health:
+      group:
+        liveness:
+          show-components: always
+          include: ping
+        readiness:
+          show-components: always
+          include: ping
+      show-components: always
+    shutdown:
+      enabled: true
+logging:
+  level:
+    spring.*: info

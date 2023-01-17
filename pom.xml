@@ -3,6 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>hw1</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -11,13 +15,28 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.parham</groupId>
+    <groupId>org.parham.docker.homeworks</groupId>
     <artifactId>Docker-Homewokrs</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <java.version>17</java.version>
+        <spring.doc.version>1.6.12</spring.doc.version>
+        <tosan.http.server.version>1.0.11</tosan.http.server.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.tosan.server.http</groupId>
+                <artifactId>tosan-httpserver-spring-boot-starter</artifactId>
+                <version>${tosan.http.server.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${spring.doc.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
